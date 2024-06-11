@@ -47,6 +47,8 @@ function Ball:collidePlayer()
         local middlePlayer = Player.y + Player.height /2
         local collisionPosition = middleBall - middlePlayer
         self.yVelocity = collisionPosition * 5
+        
+        love.audio.play(bounce)
     end
 end
 
@@ -57,6 +59,8 @@ function Ball:collideOpponent()
         local middleOpponent = Opponent.y + Opponent.height /2
         local collisionPosition = middleBall - middleOpponent
         self.yVelocity = collisionPosition * 5
+
+        love.audio.play(bounce)
     end
 end
 
